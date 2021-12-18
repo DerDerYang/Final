@@ -3,4 +3,4 @@ project(Final)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Final main.cpp)
+add_executable(Final main.cpp BDD.h toGraph.cpp toGraph.h apply.cpp apply.h)

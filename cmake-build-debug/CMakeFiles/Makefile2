@@ -93,12 +93,12 @@ clean: CMakeFiles/Final.dir/clean
 CMakeFiles/Final.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\CLion\Final\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Final"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\CLion\Final\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target Final"
 .PHONY : CMakeFiles/Final.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Final.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\CLion\Final\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\CLion\Final\cmake-build-debug\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Final.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\CLion\Final\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Final.dir/rule

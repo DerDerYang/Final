@@ -142,6 +142,33 @@ Final/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/build
 .PHONY : Final/fast
 
+apply.obj: apply.cpp.obj
+
+.PHONY : apply.obj
+
+# target to build an object file
+apply.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/apply.cpp.obj
+.PHONY : apply.cpp.obj
+
+apply.i: apply.cpp.i
+
+.PHONY : apply.i
+
+# target to preprocess a source file
+apply.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/apply.cpp.i
+.PHONY : apply.cpp.i
+
+apply.s: apply.cpp.s
+
+.PHONY : apply.s
+
+# target to generate assembly for a file
+apply.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/apply.cpp.s
+.PHONY : apply.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -169,6 +196,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+toGraph.obj: toGraph.cpp.obj
+
+.PHONY : toGraph.obj
+
+# target to build an object file
+toGraph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/toGraph.cpp.obj
+.PHONY : toGraph.cpp.obj
+
+toGraph.i: toGraph.cpp.i
+
+.PHONY : toGraph.i
+
+# target to preprocess a source file
+toGraph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/toGraph.cpp.i
+.PHONY : toGraph.cpp.i
+
+toGraph.s: toGraph.cpp.s
+
+.PHONY : toGraph.s
+
+# target to generate assembly for a file
+toGraph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Final.dir\build.make CMakeFiles/Final.dir/toGraph.cpp.s
+.PHONY : toGraph.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -178,9 +232,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Final
+	@echo ... apply.obj
+	@echo ... apply.i
+	@echo ... apply.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... toGraph.obj
+	@echo ... toGraph.i
+	@echo ... toGraph.s
 .PHONY : help
 
 

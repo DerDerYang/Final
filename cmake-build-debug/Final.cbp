@@ -80,7 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/CLion/Final/BDD.h">
+			<Option target="Final"/>
+		</Unit>
+		<Unit filename="D:/CLion/Final/apply.cpp">
+			<Option target="Final"/>
+		</Unit>
+		<Unit filename="D:/CLion/Final/apply.h">
+			<Option target="Final"/>
+		</Unit>
 		<Unit filename="D:/CLion/Final/main.cpp">
+			<Option target="Final"/>
+		</Unit>
+		<Unit filename="D:/CLion/Final/toGraph.cpp">
+			<Option target="Final"/>
+		</Unit>
+		<Unit filename="D:/CLion/Final/toGraph.h">
 			<Option target="Final"/>
 		</Unit>
 		<Unit filename="D:/CLion/Final/CMakeLists.txt">
