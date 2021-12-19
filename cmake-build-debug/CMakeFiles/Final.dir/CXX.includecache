@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/CLion/Final/BDD.h
+
+D:/CLion/Final/apply.cpp
+apply.h
+D:/CLion/Final/apply.h
+vector
+D:/CLion/Final/vector
+iostream
+-
+
+D:/CLion/Final/apply.h
+BDD.h
+D:/CLion/Final/BDD.h
+vector
+D:/CLion/Final/vector
+

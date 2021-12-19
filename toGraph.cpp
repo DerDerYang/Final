@@ -33,8 +33,8 @@ int getPriority(char ch) {
 
 vertex *toVertex(const string &s, vector<string> name, int &id, int n) {
     //将每个布尔变量转化成BDD结点
-    auto *t = new vertex(nullptr, nullptr, -1, n + 1, True, false);        //终止节点true
-    auto *f = new vertex(nullptr, nullptr, -1, n + 1, False, false);        //终止节点false
+    auto *t = new vertex(nullptr, nullptr, id++, n + 1, True, false);        //终止节点true
+    auto *f = new vertex(nullptr, nullptr, id++, n + 1, False, false);        //终止节点false
     for (int i = 0; i < name.size(); i++) {
         if (s == name[i]) {
             auto *v = new vertex(t, f, id++, i + 1, X, false);
@@ -43,7 +43,6 @@ vertex *toVertex(const string &s, vector<string> name, int &id, int n) {
     }
     return nullptr;
 }
-
 
 vector<string> split(const string &s, const string &seperator) {
     //找出所有的布尔变量
@@ -103,7 +102,7 @@ void exchange(vertex *v) {
 }
 
 void
-pushOneArg(string &temp, stack<string> &args, const vector<string> &name, int id, bool &flag1,
+pushOneArg(string &temp, stack<string> &args, const vector<string> &name, int &id, bool &flag1,
            stack<vertex *> &vertices, int n) {
     //参数压入栈，同时对应生成BDD结点入另一个栈
     if (temp.length() != 0) {
@@ -131,7 +130,7 @@ void popTwoArgs(stack<string> &args, char c, stack<vertex *> &vertices, int n, v
     vertices.pop();
     vertex *v2 = vertices.top();
     vertices.pop();
-    vertex *u = apply(v1, v2, c, n, table);
+    vertex *u = apply(v2,v1, c, n, table);
     vertices.push(u);
 }
 
@@ -142,8 +141,8 @@ vertex *toGraph() {
     vector<string> name = split(s, "*+()!");
     int n = name.size();
     //暂存结点数组，重用
-    vector<vertex *> t(n, nullptr);
-    vector<vector<vertex *>> table(n, t);
+    vector<vertex *> t(3*n+1, nullptr);
+    vector<vector<vertex *>> table(3*n+1, t);
 
     stack<string> args;
     stack<char> op;

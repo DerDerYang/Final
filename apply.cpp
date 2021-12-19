@@ -1,14 +1,17 @@
 #include "apply.h"
 #include "vector"
+#include <iostream>
 
 using namespace std;
 
 val operation(val v1, val v2, char op) {
+    cout<<v1<<" "<<v2<<endl;
     if (v1 == X || v2 == X) {
         return X;
     }
     if (op == '+') {
         bool temp = v1 | v2;
+        cout<<"!!!!"<<temp<<endl;
         if (temp) {
             return True;
         } else {
@@ -24,19 +27,20 @@ val operation(val v1, val v2, char op) {
     }
 }
 
-vertex *apply_step(vertex *v1, vertex *v2, vector<vector<vertex *>> table, char op,int n,int &flag) {
-    flag++;
-    if(flag>=3){
-        return nullptr;
-    }
+vertex *apply_step(vertex *v1, vertex *v2, vector<vector<vertex *>> &table, char op,int n) {
+    cout<<v1->getId()<<endl;
+    cout<<v2->getId()<<endl;
     vertex *u = table[v1->getId()][v2->getId()];
-    if (u != nullptr)
+
+    if (u != nullptr){
         return u;
+    }
+
     u = new vertex();
     table[v1->getId()][v2->getId()] = u;
     u->setValue(operation(v1->getValue(), v2->getValue(), op));
     if(u->getValue()!=X){
-
+        cout<<v1->getValue()<<v2->getValue()<<endl;
         u->setIndex(n+1);
         u->setLow(nullptr);
         u->setHigh(nullptr);
@@ -58,13 +62,14 @@ vertex *apply_step(vertex *v1, vertex *v2, vector<vector<vertex *>> table, char 
             vLow2 = v2;
             vHigh2 = v2;
         }
-        u->setLow(apply_step(vLow1,vLow2,table,op,n,flag));
-        u->setHigh(apply_step(vHigh1,vHigh2,table,op,n,flag));
+        cout<<"id Low: "<<vLow1->getId()<<" "<<vLow2->getId()<<endl;
+        u->setLow(apply_step(vLow1,vLow2,table,op,n));
+        cout<<"id High: "<<vHigh1->getId()<<" "<<vHigh2->getId()<<endl;
+        u->setHigh(apply_step(vHigh1,vHigh2,table,op,n));
     }
     return u;
 }
 
 vertex *apply(vertex *v1, vertex *v2, char op,int n,vector<vector<vertex *>> &table) {
-    int flag = 0;
-    return apply_step(v1, v2, table, op,n,flag);
+    return apply_step(v1, v2, table, op,n);
 }
